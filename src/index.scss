@@ -1,0 +1,23 @@
+:root {
+  font-family: Inter, sans-serif, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px;
+
+  color-scheme: light dark;
+  height: 100dvh;
+  color: rgba(255, 255, 255, 0.87);
+  background: #1e293b;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  align-items: end;
+}

@@ -1,0 +1,45 @@
+.userPop {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  border-top: 1px solid #f0f2ff;
+  margin-top: 20px;
+  margin-right: 20px;
+
+  .useBtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+  }
+
+  .userFlex {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+
+    .userInfoBlock {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: start;
+    }
+
+    .userDetails {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      line-height: 1.2;
+      span {
+        display: none;
+      }
+    }
+  }
+}

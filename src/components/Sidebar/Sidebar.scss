@@ -1,0 +1,296 @@
+$animationOpacity: ease-in-out opacity 0.7s normal;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90dvh;
+  width: 50px;
+  border-radius: 10px;
+  background-color: #000;
+  padding-left: 20px;
+  padding-right: 10px;
+  animation: ease-in-out close 0.5s reverse;
+
+  .logoFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    height: 100px;
+    column-gap: 10px;
+    width: 100%;
+    animation: startShowLogo ease-in-out 1s forwards;
+
+    span {
+      animation: $animationOpacity;
+      display: none;
+    }
+
+    .btn {
+      position: absolute;
+      right: -50px;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #000;
+      transform: rotateZ(0);
+      transition: background-color 0.4s ease;
+
+      animation: ease-in rotateButtonRight 0.5s normal;
+    }
+  }
+
+  .flexLinks {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+  }
+
+  .mainLinks {
+    height: 70%;
+  }
+
+  .mainLinks > .link {
+    animation: startShowLinks ease-out 1.5s forwards;
+  }
+
+  .mainLinks > .link:nth-child(2) {
+    animation: startShowLinks ease-out 2s forwards;
+  }
+
+  .mainLinks > .link:nth-child(3) {
+    animation: startShowLinks ease-out 2.4s forwards;
+  }
+
+  .mainLinks > .link:nth-child(4) {
+    animation: startShowLinks ease-out 2.8s forwards;
+  }
+  .mainLinks > .link:nth-child(5) {
+    animation: startShowLinks ease-out 3.2s forwards;
+  }
+  .mainLinks > .link:nth-child(6) {
+    animation: startShowLinks ease-out 3.6s forwards;
+  }
+
+  .bottomLinks > .link {
+    animation: startShowLinks ease-out 1.5s forwards;
+  }
+
+  .bottomLinks > .link:nth-child(2) {
+    animation: startShowLinks ease-out 2s forwards;
+  }
+
+  .link {
+    display: flex;
+    border-radius: 10px;
+    padding: 5px;
+    height: 30px;
+    justify-content: start;
+    align-items: center;
+    column-gap: 10px;
+    transition: background-color 0.4s ease;
+
+    span {
+      display: none;
+      height: 24px;
+      animation: $animationOpacity;
+      opacity: 0;
+    }
+  }
+
+  .buttonShowPopup {
+    display: none;
+    border: none;
+    flex: 0 0 auto;
+    padding: 10px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+}
+
+.opened {
+  width: 190px;
+  animation: ease-out open 0.6s normal;
+
+  .logoFlex > .btn {
+    animation: showBtn ease-in 15s forwards;
+  }
+
+  .logoFlex {
+    justify-content: start;
+
+    span {
+      opacity: 1;
+      display: block;
+    }
+
+    .btn {
+      right: -25px;
+      background-color: #1e293b;
+      transform: rotateZ(0);
+      animation: ease-out rotateButtonLeft 0.5s reverse;
+    }
+  }
+
+  .userPop {
+    .userFlex {
+      .userInfoBlock {
+        justify-content: flex-start;
+
+        .userDetails {
+          display: flex;
+          flex-direction: column;
+          span {
+            display: ruby;
+            animation: $animationOpacity;
+          }
+        }
+      }
+    }
+  }
+
+  .flexLinks {
+    align-items: flex-start;
+  }
+  .link {
+    width: 150px;
+    span {
+      animation: $animationOpacity;
+      opacity: 1;
+      display: block;
+    }
+  }
+
+  .buttonShowPopup {
+    display: block;
+  }
+}
+
+.active {
+  background-color: #75767c;
+  transition: background-color 0.4s ease;
+}
+
+@media (hover: hover) {
+  .link:hover {
+    cursor: pointer;
+    background-color: #75767c;
+    transition: background-color 0.6s ease;
+  }
+
+  .buttonShowPopup:hover {
+    background-color: #75767c;
+  }
+}
+
+@keyframes open {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 190px;
+  }
+}
+
+@keyframes close {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 190px;
+  }
+}
+
+@keyframes rotateButtonLeft {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(180deg);
+  }
+}
+
+@keyframes rotateButtonRight {
+  0% {
+    transform: rotateZ(180deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  20% {
+    display: none;
+    font-size: 0px;
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+
+  80% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes startShowLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes startShowLinks {
+  0% {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes showBtn {
+  0% {
+    opacity: 0;
+    transform: translateX(-45%);
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-13%);
+  }
+}

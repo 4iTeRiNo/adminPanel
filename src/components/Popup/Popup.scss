@@ -1,0 +1,115 @@
+.popup {
+  display: flex;
+  background: #000;
+  border-radius: 10px;
+  padding: 20px;
+  width: 190px;
+  flex-direction: column;
+  justify-content: first baseline;
+  align-items: center;
+  animation: show 1.3s normal;
+
+  .userFlex {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    border-bottom: 1px solid #f0f2ff;
+    animation: ease-in-out user 0.5s forwards;
+
+    .userInfoBlock {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: start;
+    }
+
+    .userDetails {
+      display: flex;
+      flex-direction: column;
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .mainLinks {
+    animation: ease-in mainLinks 1s forwards;
+  }
+
+  .bottomLinks {
+    animation: ease-in bottomLinks 1.5s forwards;
+  }
+
+  .link {
+    display: flex;
+    border-radius: 10px;
+    padding: 5px;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+    transition: background-color 0.4s ease;
+
+    span {
+      display: block;
+      height: 24px;
+    }
+  }
+
+  .bottomLinks {
+    border-top: 1px solid #f0f2ff;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes user {
+  0% {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes mainLinks {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+
+    opacity: 1;
+  }
+}
+
+@keyframes bottomLinks {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+
+    opacity: 1;
+  }
+}
